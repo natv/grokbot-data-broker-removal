@@ -1,9 +1,9 @@
 {
   "name": "grokbot-data-broker-removal-companions",
-  "version": "1.0.1",
-  "download_tag": "v1.0.1",
+  "version": "1.0.2",
+  "download_tag": "latest",
   "repo": "https://github.com/natv/grokbot-data-broker-removal",
-  "raw_base": "https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/v1.0.1/companions/",
+  "raw_base": "https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/{ref}/companions/",
   "zip_url": "https://github.com/natv/grokbot-data-broker-removal/archive/refs/tags/v1.0.1.zip",
   "fallback_tag": "v1.0.0",
   "files": [
@@ -19,5 +19,12 @@
     "MANIFEST.json"
   ],
   "bot_template_url": null,
-  "bot_template_url_note": "Fill after the Grok Bot public template is published."
+  "bot_template_url_note": "Fill after the Grok Bot public template is published.",
+  "resolve_order": [
+    "latest_release",
+    "main",
+    "v1.0.1",
+    "v1.0.0"
+  ],
+  "note": "Bots should resolve latest GitHub Release first; pinned tags are fallbacks only."
 }
