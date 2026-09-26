@@ -4,7 +4,7 @@
 
 This GitHub repo holds the **full companion files** for the Grok Bot template **Data broker removal**. The bot template itself is size-capped, so the long lists and tip sheets live here and get downloaded on first run.
 
-> **Grok Bot template link:** _coming soon — added here right after the public template is published._
+> **Grok Bot template:** [https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi](https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi)
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "name": "grokbot-data-broker-removal-companions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "download_tag": "latest",
   "repo": "https://github.com/natv/grokbot-data-broker-removal",
   "raw_base": "https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/{ref}/companions/",
@@ -18,8 +18,8 @@
     "sources-inventory.md",
     "MANIFEST.json"
   ],
-  "bot_template_url": null,
-  "bot_template_url_note": "Fill after the Grok Bot public template is published.",
+  "bot_template_url": "https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi",
+  "bot_template_url_note": "Public Grok Bot template share link.",
   "resolve_order": [
     "latest_release",
     "main",
