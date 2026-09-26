@@ -1,0 +1,18 @@
+{
+  "name": "grokbot-data-broker-removal-companions",
+  "version": "1.0.0",
+  "repo": "https://github.com/natv/grokbot-data-broker-removal",
+  "files": [
+    "identity-pack-template.md",
+    "mail-setup.md",
+    "master-catalog.csv",
+    "networks.md",
+    "playbook.md",
+    "quirks.md",
+    "session-plan.md",
+    "sharing-and-onboarding.md",
+    "sources-inventory.md"
+  ],
+  "bot_template_url": null,
+  "bot_template_url_note": "Fill after the Grok Bot public template is published."
+}
