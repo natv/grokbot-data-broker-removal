@@ -8,6 +8,8 @@
 
 Works the same on Cursor Teams or SuperGrok. This repo is the **full file pack** the bot pulls on first run (catalog, quirks, session plan, and the rest).
 
+**Android:** A normal tap can open chat **Grok** instead of the template page (App Links). Long-press → **Open in new tab**, or paste the URL into Chrome. On the preview, tap **Add to Grok Bot** and choose the **Grok Bot** app (not Grok).
+
 ---
 
 **Free help clearing your name off US people-search / data-broker sites** — without paying DeleteMe-style removal services.
