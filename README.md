@@ -1,5 +1,15 @@
 # Grokbot Data Broker Removal
 
+## Want this running in Grok Bot?
+
+1. Open **https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi**
+2. Install **Data broker removal** as its own bot (not a paste into an existing chat)
+3. Open that new bot and say hi — it downloads these companion files from GitHub and walks first-run setup
+
+This repo is the **full file pack** the bot pulls on first run (catalog, quirks, session plan, and the rest).
+
+---
+
 **Free help clearing your name off US people-search / data-broker sites** — without paying DeleteMe-style removal services.
 
 This GitHub repo holds the **full companion files** for the Grok Bot template **Data broker removal**. The bot template itself is size-capped, so the long lists and tip sheets live here and get downloaded on first run.
