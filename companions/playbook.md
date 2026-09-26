@@ -20,6 +20,14 @@ Companion files in this skill folder (travel with the skill when shared):
 - `identity-pack-template.md` — blank private identity-pack checklist (never fill in the skill folder)
 - `sharing-and-onboarding.md` — identity pack, effort/stop, export hygiene, sit-down kit, handoff, standing routines, multi-person
 
+**When companions are missing or incomplete after a Grok Bot template import:** the agent **MUST** download the full companions from the public GitHub release tag **v1.0.1** (fallback **v1.0.0**) into this skill folder **before Session A**. Prefer the tagged zip or raw files — do not rely on floating `main` alone.
+
+- Zip: `https://github.com/natv/grokbot-data-broker-removal/archive/refs/tags/v1.0.1.zip` (fallback: `…/tags/v1.0.0.zip`)
+- Raw base: `https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/v1.0.1/companions/` (fallback: `…/v1.0.0/companions/`)
+- Sync at least: `master-catalog.csv`, `quirks.md`, `session-plan.md`, `mail-setup.md`, `networks.md`, `identity-pack-template.md`, `sharing-and-onboarding.md`, `sources-inventory.md`; optionally refresh playbook from `playbook.md` if the embedded skill body is thinner than the GitHub playbook.
+- Overwrite thin stubs in this skill folder only. **Never** overwrite a filled private progress file, identity pack, or tracker outside this folder.
+- See **Fresh-project checklist** step **Sync companions from GitHub**.
+
 **Directory attribution:** Optery data-brokers-directory and Yael Big-Ass-Data-Broker-Opt-Out-List are **CC BY-NC-SA 4.0**; Eraser `brokers.yaml` is **MIT**. Keep attribution if you redistribute catalog excerpts.
 
 ## What to expect (tell the human up front)
@@ -291,15 +299,21 @@ Site-by-site mechanism tips (Whitepages through Sessions D–AA+) live in compan
 ## Fresh-project checklist (onboarding)
 
 1. **Set expectations** (especially if they are new to Grok Bot): some sites need a live phone code or CAPTCHA; the agent uses Chrome + Firefox; Tier‑1 handoffs happen early; other Needs‑you items wait for a sit‑down; Cloudflare blocks are batched for a Local execution pass; finishing all ~537 catalog rows is not required (see **Effort & when to stop** in `sharing-and-onboarding.md`).
-2. Collect the subject **identity pack privately** — copy blank fields from **`identity-pack-template.md`** into private notes (name variants, phones, emails, city/state, street/DOB only if forms need them). Never fill the template inside this skill folder; never commit filled values that will be shared.
-3. Ask **residency** → choose Eraser template `generic` / `ccpa` / `gdpr` and whether CA DROP portals apply.
-4. Ask **mail provider** → Gmail vs Microsoft 365 / Outlook vs other IMAP → configure Eraser send + monitor **or** `options.send_mode: manual` + connector drafts / search.
-5. Install Eraser (release binary / Homebrew / `go install` or build from source). If building for IMAP monitor, ensure BODY.PEEK patch is present; rebuild `~/.local/bin/eraser` after upstream pulls if Peek is lost.
-6. Ensure the agent computer has **Firefox ESR** (or another second browser) installed alongside Chrome before Session A.
-7. **Ask tracker preference** (Google Sheets / Excel in Microsoft 365–OneDrive / agent-only on my computer / other they name). Create that tracker; seed from `master-catalog.csv` T1+; backfill inventory columns; collapse network siblings; add Needs you (later), Retry later, and Cloudflare / egress views if useful. Do not paste a live tracker URL into this skill. If **multi-person / family**, one tracker (or Subject column + separate confirm emails) per person — see `sharing-and-onboarding.md`.
-8. `eraser send --dry-run` → `eraser send` under the daily cap → sync Eraser status into the tracker.
-9. Process `pipeline` leftovers and Tier‑1 SERP forms with **auto-lane batching** (8–12 sites); **Tier‑1 Needs‑you with the human early** (use the **Needs-you sit-down kit** in `sharing-and-onboarding.md`); park other Needs‑you for a later sit‑down; one digest per batch.
-10. Run a **retry pass** for transient failures; when the Cloudflare list is ready, ask for a temporary [Local execution](grokbot://app/v1/settings?id=local-execution) pass, then turn it back off.
-11. Recheck SERPs in **30–45 days**; re-run Eraser every **60–90 days** (brokers re-scrape). Never buy removal products; prefer email/form verify; CAPTCHA 2–3× then handoff; Firefox if Cloudflare spinner; exclude `requires-id`.
-12. **Export hygiene reminder:** if this skill will be shared later, keep filled packs, App Passwords, live tracker IDs, and progress dumps out of the folder (see **Sharing this skill** in `sharing-and-onboarding.md`).
-13. **Offer optional standing routines** after onboarding (inbox watch, SERP recheck, Eraser resend) — create only if the user says yes (see **Optional standing routines** in `sharing-and-onboarding.md`).
+2. **Sync companions from GitHub** (required after a thin Grok Bot template import; skip only if companions are already complete beside this skill):
+   1. Check whether `master-catalog.csv` exists in this skill folder and has **~500+** data rows (not a stub).
+   2. If missing or thin: download the release zip **or** `curl` each companion from the raw tag URLs into this skill folder. Prefer tag **v1.0.1**, fall back to **v1.0.0**. Zip: `https://github.com/natv/grokbot-data-broker-removal/archive/refs/tags/v1.0.1.zip` (or `…/v1.0.0.zip`). Raw base: `https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/v1.0.1/companions/` (or `…/v1.0.0/companions/`). Files to sync: `master-catalog.csv`, `quirks.md`, `session-plan.md`, `mail-setup.md`, `networks.md`, `identity-pack-template.md`, `sharing-and-onboarding.md`, `sources-inventory.md`; optionally overwrite a thinner embedded playbook from `playbook.md`. Overwrite thin stubs here only — **never** overwrite filled private progress / identity / tracker files outside this folder.
+   3. Verify `master-catalog.csv`, `quirks.md`, and `session-plan.md` are present and non-trivial (catalog ~500+ rows; quirks and session-plan are multi-KB docs, not pointers).
+   4. Read `MANIFEST.json` version / `download_tag` when present (expect `v1.0.1` or newer; `v1.0.0` is an acceptable fallback).
+   5. Keep attribution: Optery / Yael **CC BY-NC-SA 4.0**; Eraser **MIT**.
+3. Collect the subject **identity pack privately** — copy blank fields from **`identity-pack-template.md`** into private notes (name variants, phones, emails, city/state, street/DOB only if forms need them). Never fill the template inside this skill folder; never commit filled values that will be shared.
+4. Ask **residency** → choose Eraser template `generic` / `ccpa` / `gdpr` and whether CA DROP portals apply.
+5. Ask **mail provider** → Gmail vs Microsoft 365 / Outlook vs other IMAP → configure Eraser send + monitor **or** `options.send_mode: manual` + connector drafts / search.
+6. Install Eraser (release binary / Homebrew / `go install` or build from source). If building for IMAP monitor, ensure BODY.PEEK patch is present; rebuild `~/.local/bin/eraser` after upstream pulls if Peek is lost.
+7. Ensure the agent computer has **Firefox ESR** (or another second browser) installed alongside Chrome before Session A.
+8. **Ask tracker preference** (Google Sheets / Excel in Microsoft 365–OneDrive / agent-only on my computer / other they name). Create that tracker; seed from `master-catalog.csv` T1+; backfill inventory columns; collapse network siblings; add Needs you (later), Retry later, and Cloudflare / egress views if useful. Do not paste a live tracker URL into this skill. If **multi-person / family**, one tracker (or Subject column + separate confirm emails) per person — see `sharing-and-onboarding.md`.
+9. `eraser send --dry-run` → `eraser send` under the daily cap → sync Eraser status into the tracker.
+10. Process `pipeline` leftovers and Tier‑1 SERP forms with **auto-lane batching** (8–12 sites); **Tier‑1 Needs‑you with the human early** (use the **Needs-you sit-down kit** in `sharing-and-onboarding.md`); park other Needs‑you for a later sit‑down; one digest per batch.
+11. Run a **retry pass** for transient failures; when the Cloudflare list is ready, ask for a temporary [Local execution](grokbot://app/v1/settings?id=local-execution) pass, then turn it back off.
+12. Recheck SERPs in **30–45 days**; re-run Eraser every **60–90 days** (brokers re-scrape). Never buy removal products; prefer email/form verify; CAPTCHA 2–3× then handoff; Firefox if Cloudflare spinner; exclude `requires-id`.
+13. **Export hygiene reminder:** if this skill will be shared later, keep filled packs, App Passwords, live tracker IDs, and progress dumps out of the folder (see **Sharing this skill** in `sharing-and-onboarding.md`).
+14. **Offer optional standing routines** after onboarding (inbox watch, SERP recheck, Eraser resend) — create only if the user says yes (see **Optional standing routines** in `sharing-and-onboarding.md`).

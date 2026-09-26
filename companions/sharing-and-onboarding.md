@@ -54,11 +54,14 @@ Before calling the human over, prepare **one digest** (not a drip of interrupts)
 
 ## How to install / share (Grok Bot)
 
-- The recipient needs **Grok Bot**. Share the **whole skill folder** / skill id so companions travel with `SKILL.md` (catalog, quirks, blank session-plan, mail-setup, networks, sources-inventory, blank identity-pack-template).
-- If unsure of the exact share UI wording: the skill + companion files in the **same folder** must stay together; the recipient agent should **Read this SKILL** and follow the **Fresh-project checklist**.
-- **After install:** run Fresh-project checklist; ask tracker preference + mail provider; install **Firefox ESR** + **Eraser** on the agent computer.
+**Preferred public distribution:** publish / import the **Grok Bot template** **Data broker removal**, with full companions hosted in the public GitHub repo [natv/grokbot-data-broker-removal](https://github.com/natv/grokbot-data-broker-removal) at release tag **v1.0.1** (fallback **v1.0.0**). The template stays size-safe; the long catalog / quirks / session-plan live on GitHub.
+
+- **After a template import:** Fresh-project / getting-started **downloads companions from GitHub** (zip or raw tag URLs) into the skill folder `/home/box/agent-data/workflows/data-broker-people-search-opt-out/` before Session A. See the playbook step **Sync companions from GitHub**.
+- **Whole skill folder share** still works when companions already travel with `SKILL.md` (catalog, quirks, blank session-plan, mail-setup, networks, sources-inventory, blank identity-pack-template) — skip the download if files are already complete (~500+ catalog rows).
+- If unsure of the exact share UI wording: keep skill + companions in the **same folder** when sharing locally; the recipient agent should **Read this SKILL** and follow the **Fresh-project checklist**.
+- **After install:** sync companions if needed → run Fresh-project checklist; ask tracker preference + mail provider; install **Firefox ESR** + **Eraser** on the agent computer.
 - Point them at [Local execution](grokbot://app/v1/settings?id=local-execution) **only when** the Cloudflare / egress list is ready for a focused pass.
-- Keep wording generic — do not invent UI paths beyond known `grokbot://` links and “skill folder / companions travel with share.”
+- Keep wording generic — do not invent UI paths beyond known `grokbot://` links, the public GitHub tag URLs, and “skill folder / companions travel with share.”
 
 ## Optional standing routines (offer after onboarding)
 

@@ -35,7 +35,7 @@ Everything below is **complete** (not compressed):
 
 1. **Install** the Grok Bot template **Data broker removal** (link above, once published).
 2. On first chat, the bot asks a few setup questions (what to call you, whose listings, mail, tracker).
-3. It **downloads this repo’s `companions/` folder** (full catalog + quirks + session plan).
+3. It **downloads this repo’s `companions/` folder from tag v1.0.1** (fallback v1.0.0) — full catalog + quirks + session plan.
 4. You fill a **private** identity pack (never stored in this GitHub repo).
 5. The bot works in batches (about 8–12 sites): forms and solvable CAPTCHAs alone; phone codes / hard CAPTCHAs parked for a short “Needs you” sit-down.
 6. Recheck search results in 30–45 days — brokers re-scrape public records.
@@ -52,19 +52,35 @@ Everything below is **complete** (not compressed):
 
 ## Download for the bot / scripts
 
-Prefer a **release tag** when one exists (example `v1.0.0`):
+**Prefer release tag `v1.0.1`** (or newer). Fall back to **`v1.0.0`** if `v1.0.1` is unavailable. Do not rely on floating `main` alone for first-run sync.
 
 ```bash
-# Full repo zip (main branch)
+# Full companions zip (preferred tag)
 curl -fsSL -o grokbot-data-broker-removal.zip \
-  "https://github.com/natv/grokbot-data-broker-removal/archive/refs/heads/main.zip"
+  "https://github.com/natv/grokbot-data-broker-removal/archive/refs/tags/v1.0.1.zip"
+# Fallback:
+#   .../archive/refs/tags/v1.0.0.zip
 ```
 
-Single file (catalog):
+Raw base (single files):
 
 ```text
-https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/main/companions/master-catalog.csv
+https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/v1.0.1/companions/
 ```
+
+Example — full catalog:
+
+```text
+https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/v1.0.1/companions/master-catalog.csv
+```
+
+### Bot first-run sync
+
+After a Grok Bot **Data broker removal** template import, getting-started / Fresh-project **downloads these companions** into:
+
+`/home/box/agent-data/workflows/data-broker-people-search-opt-out/`
+
+before Session A. The agent verifies `master-catalog.csv` has ~500+ data rows, plus non-trivial `quirks.md` and `session-plan.md`, and reads `MANIFEST.json` when present. Thin stubs in the skill folder may be overwritten; filled private progress files outside that folder must not be.
 
 ## Privacy rules for this repo
 
