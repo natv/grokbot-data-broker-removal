@@ -33,7 +33,7 @@ Everything below is **complete** (not compressed):
 
 ## How it works (simple version)
 
-1. **Install** the Grok Bot template **Data broker removal** (link above, once published).
+1. **Install** the Grok Bot template **Data broker removal**: https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi
 2. On first chat, the bot asks a few setup questions (what to call you, whose listings, mail, tracker).
 3. It **downloads this repo’s `companions/` folder from tag v1.0.1** (fallback v1.0.0) — full catalog + quirks + session plan.
 4. You fill a **private** identity pack (never stored in this GitHub repo).
