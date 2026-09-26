@@ -1,6 +1,6 @@
 {
   "name": "grokbot-data-broker-removal-companions",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "download_tag": "latest",
   "repo": "https://github.com/natv/grokbot-data-broker-removal",
   "raw_base": "https://raw.githubusercontent.com/natv/grokbot-data-broker-removal/{ref}/companions/",

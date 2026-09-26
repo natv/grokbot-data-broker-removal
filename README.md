@@ -3,10 +3,10 @@
 ## Want this running in Grok Bot?
 
 1. Open **https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi**
-2. Install **Data broker removal** as its own bot (not a paste into an existing chat)
+2. Click **Add to Grok Bot**, then **Add Bot** (creates its own bot — not a paste into an existing chat)
 3. Open that new bot and say hi — it downloads these companion files from GitHub and walks first-run setup
 
-This repo is the **full file pack** the bot pulls on first run (catalog, quirks, session plan, and the rest).
+Works the same on Cursor Teams or SuperGrok. This repo is the **full file pack** the bot pulls on first run (catalog, quirks, session plan, and the rest).
 
 ---
 
@@ -43,7 +43,7 @@ Everything below is **complete** (not compressed):
 
 ## How it works (simple version)
 
-1. **Install** the Grok Bot template **Data broker removal**: https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi
+1. **Add** the Grok Bot template **Data broker removal** (open the link → **Add to Grok Bot** → **Add Bot**): https://x.ai/bot/u0gQYeIqQCAW2n96pqBvi
 2. On first chat, the bot asks a few setup questions (what to call you, whose listings, mail, tracker).
 3. It **downloads this repo’s `companions/` folder from tag v1.0.1** (fallback v1.0.0) — full catalog + quirks + session plan.
 4. You fill a **private** identity pack (never stored in this GitHub repo).
